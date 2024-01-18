@@ -1,0 +1,187 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://scripts/levels/TestLevel01.gd" type="Script" id=1]
+[ext_resource path="res://scenes/objects/PhoneBrick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/SceneLoaderArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/textures/tiles.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/protoorange05.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/protodark02.png" type="Texture" id=7]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 100, 100, 100 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 3 )
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 6 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 6 )
+
+[sub_resource type="CubeMesh" id=7]
+material = SubResource( 6 )
+
+[sub_resource type="BoxShape" id=13]
+
+[sub_resource type="SpatialMaterial" id=16]
+params_cull_mode = 2
+albedo_texture = ExtResource( 7 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=12]
+material = SubResource( 16 )
+
+[sub_resource type="SpatialMaterial" id=11]
+params_cull_mode = 2
+albedo_texture = ExtResource( 7 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=15]
+material = SubResource( 11 )
+
+[sub_resource type="SphereShape" id=17]
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_texture = ExtResource( 6 )
+roughness = 0.5
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id=19]
+material = SubResource( 20 )
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 1 )
+player = NodePath("Player")
+
+[node name="Platform" type="StaticBody" parent="."]
+transform = Transform( 100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, -1, 0 )
+
+[node name="Collision" type="CollisionShape" parent="Platform"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platform"]
+mesh = SubResource( 2 )
+
+[node name="NonMovable" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="Box01" type="StaticBody" parent="NonMovable"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 30.062, 3, 7.10445 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/Box01"]
+shape = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/Box01"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 5 )
+
+[node name="Box02" type="StaticBody" parent="NonMovable"]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 30.0616, 2.64079, 15.7233 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/Box02"]
+shape = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/Box02"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 7 )
+
+[node name="Box03" type="StaticBody" parent="NonMovable"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 30.0616, 2.1448, 22.9636 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/Box03"]
+shape = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/Box03"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 5 )
+
+[node name="Box04" type="StaticBody" parent="NonMovable"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 30.062, 1.5953, 28.3715 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/Box04"]
+shape = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/Box04"]
+mesh = SubResource( 5 )
+
+[node name="Box05" type="StaticBody" parent="NonMovable"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.062, 1.14852, 32.9078 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/Box05"]
+shape = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/Box05"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 5 )
+
+[node name="Box06" type="StaticBody" parent="NonMovable"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 30.062, 0.6, 35.6092 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/Box06"]
+shape = SubResource( 4 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/Box06"]
+mesh = SubResource( 5 )
+
+[node name="SLArea01" parent="NonMovable" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -8.649, 3.15, 18.994 )
+scene_to_load = "res://scenes/levels/TestLevel02.tscn"
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/SLArea01"]
+shape = SubResource( 13 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/SLArea01"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 12 )
+
+[node name="SLArea02" parent="NonMovable" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -8.649, 3.1, 35.672 )
+
+[node name="Collision" type="CollisionShape" parent="NonMovable/SLArea02"]
+shape = SubResource( 13 )
+
+[node name="Mesh" type="MeshInstance" parent="NonMovable/SLArea02"]
+mesh = SubResource( 15 )
+
+[node name="Slidables" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="Ball01" type="RigidBody" parent="Slidables"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622748, -4.39791 )
+
+[node name="Collision" type="CollisionShape" parent="Slidables/Ball01"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 17 )
+
+[node name="Mesh" type="MeshInstance" parent="Slidables/Ball01"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+mesh = SubResource( 19 )
+
+[node name="Pickables" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="Phone01" parent="Pickables" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -5.32611, 2.07971, 0 )
+
+[node name="Phone02" parent="Pickables" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -5.32611, 2.07971, 0.898285 )
+
+[node name="Phone03" parent="Pickables" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -5.32611, 2.07971, 1.90526 )
+
+[node name="Light" type="DirectionalLight" parent="."]
+transform = Transform( -1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, 0, 0, 0 )
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+default_position = Vector3( 0, 1, 0 )

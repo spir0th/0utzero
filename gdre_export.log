@@ -1,0 +1,41 @@
+GDRE Tools v0.6.0
+Windows 10.0.19044, AMD Radeon HD 8370D, opengl3
+Extracted 129 files, no errors detected!
+USER WARNING: Converting lossy imports, you may lose fidelity for indicated assets when re-importing upon loading the project
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:58)
+Script version 3.5.2 (rev 0xa7aad78) detected
+Saved project config to D:/Gian/Downloads/0zero/project.godot
+Saved project config to D:/Gian/Downloads/0zero/project.godot
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     16
+Failed scripts:                         0
+Imported resources for export session:  129
+Successfully converted:                 33
+Lossy:                                  3
+Rewrote metadata:                       0
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+The following files were converted from an import that was stored lossy.
+You may lose fidelity when re-importing these files upon loading the project.
+res://.import/protodark02.png-f54d7d35a71c273cdb75e12f200793c3.s3tc.stex to res://assets/textures/protodark02.png
+res://.import/protoorange05.png-3d4086a1f085587910583e0f270d2d41.s3tc.stex to res://assets/textures/protoorange05.png
+res://.import/tiles.png-e880063c4f5e080e3128e5f8e26c5cbb.s3tc.stex to res://assets/textures/tiles.png
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 3.5.2 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

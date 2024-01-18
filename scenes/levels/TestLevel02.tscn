@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/levels/TestLevel02.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="Environment" id=3]
+glow_intensity = 8.0
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 2 )
+player = NodePath("Player")
+
+[node name="Platforms" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="Platform01" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, -1.30106, 0, -4.50042 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform01"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform01"]
+mesh = SubResource( 2 )
+
+[node name="Platform02" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.187064, 0, -1.24305 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform02"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform02"]
+mesh = SubResource( 2 )
+
+[node name="Platform03" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, -1.32433, 0, 2.60455 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform03"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform03"]
+mesh = SubResource( 2 )
+
+[node name="Platform04" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.228441, 0, 5.96522 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform04"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform04"]
+mesh = SubResource( 2 )
+
+[node name="Platform05" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, -1.28573, 0, 9.07065 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform05"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform05"]
+mesh = SubResource( 2 )
+
+[node name="Platform06" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.458799, 0, 11.9478 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform06"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform06"]
+mesh = SubResource( 2 )
+
+[node name="Platform07" type="StaticBody" parent="Platforms"]
+transform = Transform( 0.5, 0, 0, 0, 0.1, 0, 0, 0, 1, -1.32465, 0, 15.0175 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform07"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform07"]
+mesh = SubResource( 2 )
+
+[node name="Platform08" type="StaticBody" parent="Platforms"]
+transform = Transform( -2.18557e-08, 0, -1, 0, 0.1, 0, 0.5, 0, -4.37114e-08, -0.57245, 0, 18.416 )
+
+[node name="Collision" type="CollisionShape" parent="Platforms/Platform08"]
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="Platforms/Platform08"]
+mesh = SubResource( 2 )
+
+[node name="Lights" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="Light01" type="SpotLight" parent="Lights"]
+transform = Transform( 0.672703, 0.0118932, 0.739817, -0.739913, 0.0108129, 0.672616, 0, -0.999871, 0.0160738, 1.24486, 2.81532, 0 )
+spot_range = 7.17463
+spot_angle = 71.7651
+
+[node name="Light02" type="SpotLight" parent="Lights"]
+transform = Transform( 0.998511, 0.000876816, 0.0545423, -0.0545494, 0.0160499, 0.998382, 0, -0.999871, 0.0160738, -0.235702, 2.86761, 10.8232 )
+spot_range = 5.17811
+spot_angle = 68.2112
+
+[node name="Light03" type="SpotLight" parent="Lights"]
+transform = Transform( -0.0322281, 0.998153, -0.0514988, -0.739913, 0.0108129, 0.672616, 0.67193, 0.0597817, 0.738198, -0.745863, 2.81532, 20.2318 )
+spot_range = 7.17463
+spot_angle = 71.7651
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 1, 3 )
+default_position = Vector3( -1.3, 1, 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
